@@ -1,0 +1,10 @@
+a {
+    .fill-current {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.was-validated .invalid-feedback {
+    display: block !important;
+}

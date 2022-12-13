@@ -34,22 +34,21 @@ export default function Register() {
         <GuestLayout>
             <Head title="Register" />
 
-            <form onSubmit={submit}>
-                <div>
-                    <InputLabel forInput="name" value="Name" />
+            <form onSubmit={submit} className={Object.keys(errors).length > 0 ? 'was-validated' : ''}>
+                <div className="input-group input-group-outline my-3">
+                    <label className="form-label">Name</label>
 
                     <TextInput
                         id="name"
                         name="name"
-                        value={data.name}
-                        className="mt-1 block w-full"
+                        value={data.email}
+                        className="form-control"
                         autoComplete="name"
                         isFocused={true}
                         handleChange={onHandleChange}
-                        required
                     />
 
-                    <InputError message={errors.name} className="mt-2" />
+                    <InputError message={errors.name} />
                 </div>
 
                 <div className="mt-4">
@@ -63,7 +62,6 @@ export default function Register() {
                         className="mt-1 block w-full"
                         autoComplete="username"
                         handleChange={onHandleChange}
-                        required
                     />
 
                     <InputError message={errors.email} className="mt-2" />
@@ -80,7 +78,6 @@ export default function Register() {
                         className="mt-1 block w-full"
                         autoComplete="new-password"
                         handleChange={onHandleChange}
-                        required
                     />
 
                     <InputError message={errors.password} className="mt-2" />
@@ -96,7 +93,6 @@ export default function Register() {
                         value={data.password_confirmation}
                         className="mt-1 block w-full"
                         handleChange={onHandleChange}
-                        required
                     />
 
                     <InputError message={errors.password_confirmation} className="mt-2" />
