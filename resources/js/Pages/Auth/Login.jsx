@@ -30,7 +30,7 @@ export default function Login({ status, canResetPassword }) {
     post(route('login'));
   };
   return (
-    <GuestLayout>
+    <GuestLayout title="Sign In">
       <Head title="Log in" />
 
       {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
@@ -90,6 +90,15 @@ export default function Login({ status, canResetPassword }) {
               Log in
             </PrimaryButton>
           </div>
+        </div>
+        <div className="flex items-center justify-end mt-4">
+          Don't have account? {' '} 
+          <Link
+            href={route('register')}
+            className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Register
+          </Link>
         </div>
       </form>
 
