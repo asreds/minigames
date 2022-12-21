@@ -1,5 +1,14 @@
 import React from 'react';
-export default function SecondaryButton({ type = 'button', className = '', processing, children, onClick }) {
+
+type SecondaryButtonProps = {
+    type?: string,
+    className?: string,
+    processing?: boolean,
+    children?: string,
+    onClick?: Function,
+}
+
+export default function SecondaryButton({ type = 'button', className = '', processing, children, onClick } : SecondaryButtonProps) {
     return (
         <button
             type={type}

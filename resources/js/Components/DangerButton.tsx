@@ -1,5 +1,14 @@
 import React from 'react';
-export default function DangerButton({ type = 'submit', className = '', processing, children, onClick }) {
+
+type DangerButtonProps = {
+    type?: string,
+    className?: string,
+    processing?: boolean,
+    children?: string,
+    onClick?: Function,
+}
+
+export default function DangerButton({ type = 'submit', className = '', processing, children, onClick }: DangerButtonProps) {
     return (
         <button
             type={type}

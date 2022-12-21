@@ -6,6 +6,8 @@ export default forwardRef(function TextInput(
 ) {
     const input = ref ? ref : useRef();
     useEffect(() => {
+        // @ts-ignore
+        window.onload();
         if (isFocused) {
             input.current.focus();
         }

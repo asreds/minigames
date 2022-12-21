@@ -40,9 +40,9 @@ export default function DeleteUserForm({ className }) {
                 </p>
             </header>
 
-            <DangerButton onClick={confirmUserDeletion} processing={undefined} children={undefined}>Delete Account</DangerButton>
+            <DangerButton onClick={confirmUserDeletion}>Delete Account</DangerButton>
 
-            <Modal show={confirmingUserDeletion} onClose={closeModal} children={undefined}>
+            <Modal show={confirmingUserDeletion} onClose={closeModal}>
                 <form onSubmit={deleteUser} className="p-6">
                     <h2 className="text-lg font-medium text-gray-900">
                         Are you sure your want to delete your account?
@@ -73,9 +73,11 @@ export default function DeleteUserForm({ className }) {
                     </div>
 
                     <div className="mt-6 flex justify-end">
-                        <SecondaryButton onClick={closeModal} processing={undefined} children={undefined}>Cancel</SecondaryButton>
+                        <SecondaryButton onClick={closeModal}>
+                            Cancel
+                        </SecondaryButton>
 
-                        <DangerButton className="ml-3" processing={processing} children={undefined} onClick={undefined}>
+                        <DangerButton className="ml-3">
                             Delete Account
                         </DangerButton>
                     </div>
