@@ -73,7 +73,7 @@ const Sidebar = ({ auth }) => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className='nav-link text-white' href={route('logout')}>
+                        <Link className='nav-link text-white' href={route('logout')} method="post">
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i className="material-icons opacity-10">login</i>
                             </div>

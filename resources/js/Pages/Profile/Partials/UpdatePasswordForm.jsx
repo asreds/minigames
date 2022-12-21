@@ -45,68 +45,75 @@ export default function UpdatePasswordForm({ className }) {
                     Ensure your account is using a long, random password to stay secure.
                 </p>
             </header>
+            <div class="row">
+                <div className='col-4'>
+                    <form onSubmit={updatePassword} >
+                        <div className="input-group input-group-outline  my-3">
+                            <label className="form-label">Current Password</label>
 
-            <form onSubmit={updatePassword} className="mt-6 space-y-6">
-                <div>
-                    <InputLabel for="current_password" value="Current Password" />
+                            <TextInput
+                                id="current_password"
+                                ref={currentPasswordInput}
+                                type="password"
+                                name="current_password"
+                                className="form-control"
+                                autoComplete="name"
+                                handleChange={(e) => setData('current_password', e.target.value)}
+                                autofocus
+                            />
 
-                    <TextInput
-                        id="current_password"
-                        ref={currentPasswordInput}
-                        value={data.current_password}
-                        handleChange={(e) => setData('current_password', e.target.value)}
-                        type="password"
-                        className="mt-1 block w-full"
-                        autocomplete="current-password"
-                    />
+                            <InputError message={errors.current_password} />
+                        </div>
 
-                    <InputError message={errors.current_password} className="mt-2" />
+                        <div className="input-group input-group-outline  my-3">
+                            <label className="form-label">New Password</label>
+
+                            <TextInput
+                                id="password"
+                                ref={passwordInput}
+                                type="password"
+                                name="password"
+                                className="form-control"
+                                autoComplete="password"
+                                handleChange={(e) => setData('password', e.target.value)}
+                                autofocus
+                            />
+
+                            <InputError message={errors.password} />
+                        </div>
+
+                        <div className="input-group input-group-outline  my-3">
+                            <label className="form-label">Confirm Password</label>
+
+                            <TextInput
+                                id="password_confirmation"
+                                ref={passwordInput}
+                                type="password"
+                                name="password_confirmation"
+                                className="form-control"
+                                autoComplete="password_confirmation"
+                                handleChange={(e) => setData('password_confirmation', e.target.value)}
+                                autofocus
+                            />
+
+                            <InputError message={errors.password_confirmation} />
+                        </div>
+
+                        <div className="flex items-center gap-4">
+                            <PrimaryButton processing={processing}>Save</PrimaryButton>
+
+                            <Transition
+                                show={recentlySuccessful}
+                                enterFrom="opacity-0"
+                                leaveTo="opacity-0"
+                                className="transition ease-in-out"
+                            >
+                                <p className="text-sm text-gray-600">Saved.</p>
+                            </Transition>
+                        </div>
+                    </form>
                 </div>
-
-                <div>
-                    <InputLabel for="password" value="New Password" />
-
-                    <TextInput
-                        id="password"
-                        ref={passwordInput}
-                        value={data.password}
-                        handleChange={(e) => setData('password', e.target.value)}
-                        type="password"
-                        className="mt-1 block w-full"
-                        autocomplete="new-password"
-                    />
-
-                    <InputError message={errors.password} className="mt-2" />
-                </div>
-
-                <div>
-                    <InputLabel for="password_confirmation" value="Confirm Password" />
-
-                    <TextInput
-                        id="password_confirmation"
-                        value={data.password_confirmation}
-                        handleChange={(e) => setData('password_confirmation', e.target.value)}
-                        type="password"
-                        className="mt-1 block w-full"
-                        autocomplete="new-password"
-                    />
-
-                    <InputError message={errors.password_confirmation} className="mt-2" />
-                </div>
-
-                <div className="flex items-center gap-4">
-                    <PrimaryButton processing={processing}>Save</PrimaryButton>
-
-                    <Transition
-                        show={recentlySuccessful}
-                        enterFrom="opacity-0"
-                        leaveTo="opacity-0"
-                        className="transition ease-in-out"
-                    >
-                        <p className="text-sm text-gray-600">Saved.</p>
-                    </Transition>
-                </div>
-            </form>
+            </div>
         </section>
     );
 }

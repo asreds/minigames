@@ -37,7 +37,7 @@ export default function Login({ status, canResetPassword }) {
 
       <form onSubmit={submit} className={Object.keys(errors).length > 0 ? 'was-validated' : ''}>
         <div className="input-group input-group-outline my-3">
-          <label className="form-label">Password</label>
+          <label className="form-label">Email</label>
 
           <TextInput
             id="email"
@@ -54,7 +54,7 @@ export default function Login({ status, canResetPassword }) {
         </div>
 
         <div className="input-group input-group-outline my-3">
-          <label className="form-label">Email</label>
+          <label className="form-label">Password</label>
 
           <TextInput
             id="password"
