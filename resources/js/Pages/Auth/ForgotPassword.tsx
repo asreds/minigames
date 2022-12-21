@@ -1,24 +1,21 @@
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, useForm } from '@inertiajs/inertia-react';
-
+import React from 'react';
+import GuestLayout from "@/Layouts/GuestLayout";
+import InputError from "@/Components/InputError";
+import PrimaryButton from "@/Components/PrimaryButton";
+import TextInput from "@/Components/TextInput";
+import { Head, useForm } from "@inertiajs/inertia-react";
 export default function ForgotPassword({ status }) {
     const { data, setData, post, processing, errors } = useForm({
-        email: '',
+        email: ""
     });
-
-    const onHandleChange = (event) => {
+    const onHandleChange = event => {
         setData(event.target.name, event.target.value);
     };
-
-    const submit = (e) => {
+    const submit = e => {
         e.preventDefault();
-
-        post(route('password.email'));
+        //@ts-ignore
+        post(route("password.email"));
     };
-
     return (
         <GuestLayout>
             <Head title="Forgot Password" />

@@ -1,32 +1,27 @@
-import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, useForm } from '@inertiajs/inertia-react';
-
+import React , { useEffect } from "react";
+import GuestLayout from "@/Layouts/GuestLayout";
+import InputError from "@/Components/InputError";
+import InputLabel from "@/Components/InputLabel";
+import PrimaryButton from "@/Components/PrimaryButton";
+import TextInput from "@/Components/TextInput";
+import { Head, useForm } from "@inertiajs/inertia-react";
 export default function ConfirmPassword() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        password: '',
+        password: ""
     });
-
     useEffect(() => {
         return () => {
-            reset('password');
+            reset("password");
         };
     }, []);
-
-    const onHandleChange = (event) => {
+    const onHandleChange = event => {
         setData(event.target.name, event.target.value);
     };
-
-    const submit = (e) => {
+    const submit = e => {
         e.preventDefault();
-
-        post(route('password.confirm'));
+        // @ts-ignore
+        post(route("password.confirm"));
     };
-
     return (
         <GuestLayout>
             <Head title="Confirm Password" />

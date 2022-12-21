@@ -1,12 +1,9 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/inertia-react';
-
+import React from 'react';
+import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { Head } from "@inertiajs/inertia-react";
 export default function Dashboard(props) {
     return (
-        <AuthenticatedLayout
-            auth={props.auth}
-            errors={props.errors}
-        >
+        <AuthenticatedLayout auth={props.auth} errors={props.errors}>
             <Head title="Dashboard" />
 
             <div className="container-fluid py-4">
@@ -24,7 +21,9 @@ export default function Dashboard(props) {
                             </div>
                             <hr className="dark horizontal my-0" />
                             <div className="card-footer p-3">
-                                <p className="mb-0"><span className="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
+                                <p className="mb-0">
+                                    <span className="text-success text-sm font-weight-bolder">+55% </span>than last week
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -41,7 +40,9 @@ export default function Dashboard(props) {
                             </div>
                             <hr className="dark horizontal my-0" />
                             <div className="card-footer p-3">
-                                <p className="mb-0"><span className="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
+                                <p className="mb-0">
+                                    <span className="text-success text-sm font-weight-bolder">+3% </span>than last month
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -58,7 +59,9 @@ export default function Dashboard(props) {
                             </div>
                             <hr className="dark horizontal my-0" />
                             <div className="card-footer p-3">
-                                <p className="mb-0"><span className="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
+                                <p className="mb-0">
+                                    <span className="text-danger text-sm font-weight-bolder">-2%</span> than yesterday
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -75,7 +78,9 @@ export default function Dashboard(props) {
                             </div>
                             <hr className="dark horizontal my-0" />
                             <div className="card-footer p-3">
-                                <p className="mb-0"><span className="text-success text-sm font-weight-bolder">+5% </span>than yesterday</p>
+                                <p className="mb-0">
+                                    <span className="text-success text-sm font-weight-bolder">+5% </span>than yesterday
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -86,7 +91,7 @@ export default function Dashboard(props) {
                             <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
                                 <div className="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                                     <div className="chart">
-                                        <canvas id="chart-bars" className="chart-canvas" height={170} style={{ display: 'block', boxSizing: 'border-box', height: '170px', width: '488.7px' }} width={488} />
+                                        <canvas id="chart-bars" className="chart-canvas" height={170} style={{ display: "block", boxSizing: "border-box", height: "170px", width: "488.7px" }} width={488} />
                                     </div>
                                 </div>
                             </div>
@@ -106,13 +111,16 @@ export default function Dashboard(props) {
                             <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
                                 <div className="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
                                     <div className="chart">
-                                        <canvas id="chart-line" className="chart-canvas" height={170} width={488} style={{ display: 'block', boxSizing: 'border-box', height: '170px', width: '488.7px' }} />
+                                        <canvas id="chart-line" className="chart-canvas" height={170} width={488} style={{ display: "block", boxSizing: "border-box", height: "170px", width: "488.7px" }} />
                                     </div>
                                 </div>
                             </div>
                             <div className="card-body">
                                 <h6 className="mb-0 "> Daily Sales </h6>
-                                <p className="text-sm "> (<span className="font-weight-bolder">+15%</span>) increase in today sales. </p>
+                                <p className="text-sm ">
+                                    {" "}
+                                    (<span className="font-weight-bolder">+15%</span>) increase in today sales.{" "}
+                                </p>
                                 <hr className="dark horizontal" />
                                 <div className="d-flex ">
                                     <i className="material-icons text-sm my-auto me-1">schedule</i>
@@ -126,7 +134,7 @@ export default function Dashboard(props) {
                             <div className="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
                                 <div className="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
                                     <div className="chart">
-                                        <canvas id="chart-line-tasks" className="chart-canvas" height={170} width={488} style={{ display: 'block', boxSizing: 'border-box', height: '170px', width: '488.7px' }} />
+                                        <canvas id="chart-line-tasks" className="chart-canvas" height={170} width={488} style={{ display: "block", boxSizing: "border-box", height: "170px", width: "488.7px" }} />
                                     </div>
                                 </div>
                             </div>
@@ -160,9 +168,21 @@ export default function Dashboard(props) {
                                                 <i className="fa fa-ellipsis-v text-secondary" aria-hidden="true" />
                                             </a>
                                             <ul className="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
-                                                <li><a className="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
-                                                <li><a className="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
-                                                <li><a className="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                                                <li>
+                                                    <a className="dropdown-item border-radius-md" href="javascript:;">
+                                                        Action
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a className="dropdown-item border-radius-md" href="javascript:;">
+                                                        Another action
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a className="dropdown-item border-radius-md" href="javascript:;">
+                                                        Something else here
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -492,25 +512,34 @@ export default function Dashboard(props) {
                         <div className="row align-items-center justify-content-lg-between">
                             <div className="col-lg-6 mb-lg-0 mb-4">
                                 <div className="copyright text-center text-sm text-muted text-lg-start">
-                                    © 2022,
-                                    made with <i className="fa fa-heart" aria-hidden="true" /> by
-                                    <a href="https://www.creative-tim.com" className="font-weight-bold" target="_blank">Creative Tim</a>
+                                    © 2022, made with <i className="fa fa-heart" aria-hidden="true" /> by
+                                    <a href="https://www.creative-tim.com" className="font-weight-bold" target="_blank">
+                                        Creative Tim
+                                    </a>
                                     for a better web.
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <ul className="nav nav-footer justify-content-center justify-content-lg-end">
                                     <li className="nav-item">
-                                        <a href="https://www.creative-tim.com" className="nav-link text-muted" target="_blank">Creative Tim</a>
+                                        <a href="https://www.creative-tim.com" className="nav-link text-muted" target="_blank">
+                                            Creative Tim
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://www.creative-tim.com/presentation" className="nav-link text-muted" target="_blank">About Us</a>
+                                        <a href="https://www.creative-tim.com/presentation" className="nav-link text-muted" target="_blank">
+                                            About Us
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://www.creative-tim.com/blog" className="nav-link text-muted" target="_blank">Blog</a>
+                                        <a href="https://www.creative-tim.com/blog" className="nav-link text-muted" target="_blank">
+                                            Blog
+                                        </a>
                                     </li>
                                     <li className="nav-item">
-                                        <a href="https://www.creative-tim.com/license" className="nav-link pe-0 text-muted" target="_blank">License</a>
+                                        <a href="https://www.creative-tim.com/license" className="nav-link pe-0 text-muted" target="_blank">
+                                            License
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -518,7 +547,6 @@ export default function Dashboard(props) {
                     </div>
                 </footer>
             </div>
-
         </AuthenticatedLayout>
     );
 }

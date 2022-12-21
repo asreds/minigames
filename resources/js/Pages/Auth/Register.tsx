@@ -1,52 +1,40 @@
-import { useEffect } from 'react';
-import GuestLayout from '@/Layouts/GuestLayout';
-import InputError from '@/Components/InputError';
-import InputLabel from '@/Components/InputLabel';
-import PrimaryButton from '@/Components/PrimaryButton';
-import TextInput from '@/Components/TextInput';
-import { Head, Link, useForm } from '@inertiajs/inertia-react';
-
+import React from 'react';
+import { useEffect } from "react";
+import GuestLayout from "@/Layouts/GuestLayout";
+import InputError from "@/Components/InputError";
+import InputLabel from "@/Components/InputLabel";
+import PrimaryButton from "@/Components/PrimaryButton";
+import TextInput from "@/Components/TextInput";
+import { Head, Link, useForm } from "@inertiajs/inertia-react";
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: '',
-        email: '',
-        password: '',
-        password_confirmation: '',
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: ""
     });
-
     useEffect(() => {
         return () => {
-            reset('password', 'password_confirmation');
+            reset("password", "password_confirmation");
         };
     }, []);
-
-    const onHandleChange = (event) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
+    const onHandleChange = event => {
+        setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value);
     };
-
-    const submit = (e) => {
+    const submit = e => {
         e.preventDefault();
-
-        post(route('register'));
+        //@ts-ignore
+        post(route("register"));
     };
-
     return (
         <GuestLayout title="Register">
             <Head title="Register" />
 
-            <form onSubmit={submit} className={Object.keys(errors).length > 0 ? 'was-validated' : ''}>
+            <form onSubmit={submit} className={Object.keys(errors).length > 0 ? "was-validated" : ""}>
                 <div className="input-group input-group-outline my-3">
                     <label className="form-label">Name</label>
 
-                    <TextInput
-                        id="name"
-                        name="name"
-                        value={data.name}
-                        className="form-control"
-                        autoComplete="name"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                    />
+                    <TextInput id="name" name="name" value={data.name} className="form-control" autoComplete="name" isFocused={true} handleChange={onHandleChange} />
 
                     <InputError message={errors.name} />
                 </div>
@@ -54,15 +42,7 @@ export default function Register() {
                 <div className="input-group input-group-outline my-3">
                     <label className="form-label">Email</label>
 
-                    <TextInput
-                        id="email"
-                        name="email"
-                        value={data.email}
-                        className="form-control"
-                        autoComplete="email"
-                        isFocused={true}
-                        handleChange={onHandleChange}
-                    />
+                    <TextInput id="email" name="email" value={data.email} className="form-control" autoComplete="email" isFocused={true} handleChange={onHandleChange} />
 
                     <InputError message={errors.email} />
                 </div>
@@ -108,9 +88,10 @@ export default function Register() {
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    Already registered? {' '}
+                    Already registered?{" "}
                     <Link
-                        href={route('login')}
+                        /* @ts-ignore */
+                        href={route("login")}
                         className="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
                         Login

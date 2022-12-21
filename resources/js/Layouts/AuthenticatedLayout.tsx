@@ -1,10 +1,8 @@
-import { useState } from 'react';
+import React , { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
-
 export default function Authenticated({ auth, header, children }) {
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
-
     return (
         <>
             <Sidebar auth={auth} />

@@ -1,7 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types';
-
-const Guest =  ({ children, title = "Sign In" }) => {
+import React from "react";
+type GuestProps = {
+  title: string
+};
+const Guest: React.SFC<GuestProps> = ({ children, title = "Sign In" }) => {
   return (
     <main className="main-content  mt-0">
       <div className="page-header align-items-start min-vh-100" style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80")' }}>
@@ -15,9 +16,7 @@ const Guest =  ({ children, title = "Sign In" }) => {
                     <h4 className="text-white font-weight-bolder text-center mt-2 mb-0">{title}</h4>
                   </div>
                 </div>
-                <div className="card-body">
-                  {children}
-                </div>
+                <div className="card-body">{children}</div>
               </div>
             </div>
           </div>
@@ -25,11 +24,5 @@ const Guest =  ({ children, title = "Sign In" }) => {
       </div>
     </main>
   );
-}
-
-Guest.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.array.isRequired
-}
-
+};
 export default Guest;

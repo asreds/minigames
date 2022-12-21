@@ -1,5 +1,5 @@
-import { Link } from '@inertiajs/inertia-react';
-
+import React from 'react';
+import { Link } from "@inertiajs/inertia-react";
 const Sidebar = ({ auth }) => {
     return (
         <aside className="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark bg-white" id="sidenav-main">
@@ -65,7 +65,8 @@ const Sidebar = ({ auth }) => {
                         <h6 className="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
                     </li>
                     <li className="nav-item">
-                        <Link className='nav-link text-white' href={route('profile.edit')}>
+                        {/* @ts-ignore */}
+                        <Link className="nav-link text-white" href={route("profile.edit")}>
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
                                 <i className="material-icons opacity-10">person</i>
                             </div>
@@ -73,17 +74,17 @@ const Sidebar = ({ auth }) => {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className='nav-link text-white' href={route('logout')} method="post">
+                        {/* @ts-ignore */}
+                        <Link className="nav-link text-white" href={route("logout")} method="post">
                             <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                            <i className="material-icons opacity-10">login</i>
+                                <i className="material-icons opacity-10">login</i>
                             </div>
                             <span className="nav-link-text ms-1">Sign Out</span>
                         </Link>
                     </li>
                 </ul>
             </div>
-        </aside >
-    )
-}
-
+        </aside>
+    );
+};
 export default Sidebar;
