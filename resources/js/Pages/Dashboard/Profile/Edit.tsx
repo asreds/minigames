@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import DeleteUserForm from "./Partials/DeleteUserForm";
 import UpdatePasswordForm from "./Partials/UpdatePasswordForm";
@@ -8,7 +8,9 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
     return (
         <AuthenticatedLayout
             auth={auth}
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Profile</h2>}>
+            title="Profile"
+            breadcrumbTitle="Profile"
+        >
             <Head title="Profile" />
 
             <div className="container-fluid py-4">

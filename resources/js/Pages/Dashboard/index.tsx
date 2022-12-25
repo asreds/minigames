@@ -3,7 +3,7 @@ import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { Head } from "@inertiajs/inertia-react";
 export default function Dashboard(props) {
     return (
-        <AuthenticatedLayout auth={props.auth} errors={props.errors}>
+        <AuthenticatedLayout auth={props.auth}>
             <Head title="Dashboard" />
 
             <div className="container-fluid py-4">
