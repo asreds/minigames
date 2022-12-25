@@ -18,4 +18,15 @@ class TtsController extends Controller
     {
         return Inertia::render('Dashboard/Tts/index');
     }
+
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function add(Request $request)
+    {
+        return Inertia::render('Dashboard/Tts/Add');
+    }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import { Head } from "@inertiajs/inertia-react";
+import { Link } from "@inertiajs/inertia-react";
 
 const TTSIndex = ({ auth }) => (
     <AuthenticatedLayout
@@ -27,12 +27,14 @@ const TTSIndex = ({ auth }) => (
                                 </div>
                                 <div className="col-lg-6 col-5 my-auto text-end">
                                     <div className="dropdown float-lg-end pe-4">
-                                        <button
+                                        <Link
                                             type="button"
                                             className="btn btn-outline-success"
+                                            // @ts-ignore
+                                            href={route("dashboard.tts.add")}
                                         >
                                             Add TTS
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

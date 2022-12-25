@@ -8,3 +8,28 @@ a {
 .was-validated .invalid-feedback {
     display: block !important;
 }
+
+.form-control__border1 {
+    border: 1px solid #d2d6da;
+}
+
+.form-control__marginb10 {
+    margin-bottom: 10px;
+    padding: .5rem;
+}
+
+.line-1 {
+    border-bottom: 1px dotted #7b809a!important;
+}
+
+.container-fluid__question {
+    min-height: 400px;
+    .row {
+        min-height: 400px;
+    }
+    .col-horizontal__line {
+        border-right: 1px dotted #7b809a!important;
+        height: 100%;
+        min-height: 400px;
+    }
+}

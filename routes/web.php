@@ -38,6 +38,7 @@ Route::prefix('dashboard')->group(function () {
 
         // tts router
         Route::get('/tts', [TtsController::class, 'index'])->name('dashboard.tts');
+        Route::get('/tts/add', [TtsController::class, 'add'])->name('dashboard.tts.add');
     });
 });
 
