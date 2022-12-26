@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\TtsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,13 +27,19 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return Inertia::render('Dashboard/index');
+})->middleware(['auth', 'verified', 'only_admin'])->name('dashboard');
+Route::prefix('dashboard')->group(function () {
+    Route::middleware('auth')->group(function () {
+        // profile router
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('dashboard.profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        // tts router
+        Route::get('/tts', [TtsController::class, 'index'])->name('dashboard.tts');
+        Route::get('/tts/add', [TtsController::class, 'add'])->name('dashboard.tts.add');
+    });
 });
 
 require __DIR__.'/auth.php';
