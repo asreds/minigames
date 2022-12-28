@@ -16,7 +16,7 @@ class TtsController extends Controller
      */
     public function index(Request $request)
     {
-        return Inertia::render('Dashboard/Tts/index');
+        return Inertia::render('Dashboard/Tts/Index');
     }
 
     /**

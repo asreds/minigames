@@ -1,9 +1,16 @@
 import * as React from "react";
-import { FormQuestions } from "./formQuestions";
+import { FormikProps } from "formik";
+import { FormQuestions } from "./FormQuestions";
 
-export interface IAppProps {}
+interface IValues {
+    title?: string;
+}
 
-export default function Questions(props: IAppProps) {
+type Props = {
+    formik: FormikProps<IValues>;
+};
+
+export default function Questions({formik}: Props) {
     return (
         <div className="container-fluid py-4">
             <div className="row mb-4">
@@ -18,22 +25,22 @@ export default function Questions(props: IAppProps) {
                             </div>
                         </div>
                         <div className="card-body px-0 pb-2">
-                            <div class="container-fluid py-4 container-fluid__question">
-                                <div class="row">
-                                    <div class="col col-horizontal__line">
+                            <div className="container-fluid py-4 container-fluid__question">
+                                <div className="row row__question">
+                                    <div className="col col-horizontal__line">
                                         <h1 className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                             {" "}
                                             Mendatar
                                         </h1>
-                                        <FormQuestions />
+                                        <FormQuestions formik={formik} type="mendatar" />
                                     </div>
-                                    <div class="col">
+                                    <div className="col">
                                         {" "}
                                         <h1 className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                                             {" "}
                                             Menurun
                                         </h1>
-                                        <FormQuestions />
+                                        <FormQuestions formik={formik} type="menurun" />
                                     </div>
                                 </div>
                             </div>

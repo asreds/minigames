@@ -40,7 +40,7 @@ export default function UpdatePasswordForm({ className }) {
                     Ensure your account is using a long, random password to stay secure.
                 </p>
             </header>
-            <div class="row">
+            <div className="row">
                 <div className="col-4">
                     <form onSubmit={updatePassword}>
                         <div className="input-group input-group-outline  my-3">

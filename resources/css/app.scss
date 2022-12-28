@@ -1,3 +1,5 @@
+$color-gray_01: #d2d6da;
+
 a {
     .fill-current {
         width: 100px;
@@ -10,7 +12,7 @@ a {
 }
 
 .form-control__border1 {
-    border: 1px solid #d2d6da;
+    border: 1px solid $color-gray_01;
 }
 
 .form-control__marginb10 {
@@ -22,9 +24,13 @@ a {
     border-bottom: 1px dotted #7b809a!important;
 }
 
+.btn-logout {
+    width: 85%;
+}
+
 .container-fluid__question {
     min-height: 400px;
-    .row {
+    .row__question {
         min-height: 400px;
     }
     .col-horizontal__line {
@@ -32,4 +38,37 @@ a {
         height: 100%;
         min-height: 400px;
     }
+}
+
+.col__btn-submit--number {
+    padding-top: 15px;
+}
+
+.table-answer {
+    .answer-container {
+        padding: 15px;
+        border: 1px solid $color-gray_01;
+        position: relative;
+        .answer-container__form-answer {
+            width: 50px;
+        }
+        .answer-container__form-number {
+            position: absolute;
+            width: 17px;
+            height: 10px;
+            top: 2px;
+            left: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            color: #000;
+            border: 1px solid $color-gray_01;
+        }
+        .form-control {
+            border: 1px solid $color-gray_01;
+        }
+        .btn__answer {
+            height: 50px;
+        }
+    }
+    
 }

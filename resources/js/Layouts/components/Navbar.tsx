@@ -14,7 +14,7 @@ const Navbar = ({title, breadcrumbTitle} : NavbarProps) => {
                     <ol className="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li className="breadcrumb-item text-sm">
                             {/* @ts-ignore */}
-                            <Link className="opacity-5 text-dark" href={route("dashboard")} active={route().current("dashboard")}>
+                            <Link className="opacity-5 text-dark" href={route("dashboard")}>
                                 {" "}
                                 Pages{" "}
                             </Link>

@@ -26,7 +26,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
 
                 <p className="mt-1 text-sm text-gray-600">Update your account's profile information and email address.</p>
             </header>
-            <div class="row">
+            <div className="row">
                 <div className="col-4">
                     <form onSubmit={submit} className={Object.keys(errors).length > 0 ? "was-validated" : ""}>
                         <div className="input-group input-group-outline is-filled my-3">

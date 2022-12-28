@@ -19,7 +19,7 @@ const Sidebar = ({ auth }) => {
                     target="_blank"
                 >
                     <img
-                        src="../assets/img/logo-ct.png"
+                        src="/assets/img/logo-ct.png"
                         className="navbar-brand-img h-100"
                         alt="main_logo"
                     />
@@ -72,62 +72,6 @@ const Sidebar = ({ auth }) => {
                             <span className="nav-link-text ms-1">TTS</span>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link text-white "
-                            href="../pages/billing.html"
-                        >
-                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">
-                                    receipt_long
-                                </i>
-                            </div>
-                            <span className="nav-link-text ms-1">Billing</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link text-white "
-                            href="../pages/virtual-reality.html"
-                        >
-                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">
-                                    view_in_ar
-                                </i>
-                            </div>
-                            <span className="nav-link-text ms-1">
-                                Virtual Reality
-                            </span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link text-white "
-                            href="../pages/rtl.html"
-                        >
-                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">
-                                    format_textdirection_r_to_l
-                                </i>
-                            </div>
-                            <span className="nav-link-text ms-1">RTL</span>
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link text-white "
-                            href="../pages/notifications.html"
-                        >
-                            <div className="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                                <i className="material-icons opacity-10">
-                                    notifications
-                                </i>
-                            </div>
-                            <span className="nav-link-text ms-1">
-                                Notifications
-                            </span>
-                        </a>
-                    </li>
                     <li className="nav-item mt-3">
                         <h6 className="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">
                             Account pages
@@ -154,7 +98,8 @@ const Sidebar = ({ auth }) => {
                     <li className="nav-item">
                         {/* @ts-ignore */}
                         <Link
-                            className="nav-link text-white"
+                            className=" btn btn-warning btn-logout nav-link text-white"
+                            as="button" type="button"
                             href={route("logout")}
                             method="post"
                         >
